@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1157</width>
+    <height>799</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Moniteur Roomba</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QWidget" name="widgetCommandes" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <widget class="Line" name="line">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>0</y>
+           <width>20</width>
+           <height>421</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+        <widget class="QWidget" name="gridLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>181</width>
+           <height>571</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_CommandeMoteurs">
+            <property name="text">
+             <string>Commande des moteurs</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButton_ArretComplet">
+            <property name="text">
+             <string>Arrêt complet</string>
+            </property>
+            <property name="icon">
+             <iconset resource="ressources.qrc">
+              <normaloff>:/icons/res/stop.png</normaloff>:/icons/res/stop.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pushButton_NettoyageModeClean">
+            <property name="text">
+             <string>Nettoyage mode Clean</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label_texteRoueDroite">
+              <property name="text">
+               <string>Roue droite:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_valeurRoueDroite">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="17" column="0">
+           <widget class="QLabel" name="label_textBoutonCentral">
+            <property name="text">
+             <string>Voyant du bouton central</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_texteBrosePrincipale">
+              <property name="text">
+               <string>Brosse principale:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_valeurBrossePrincipale">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="6" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_texteRoueGauche">
+              <property name="text">
+               <string>Roue gauche:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_valeurRoueGauche">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="13" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="label_texteAspiration">
+              <property name="text">
+               <string>Aspiration:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_valeurAspiration">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="11" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_texteBrosseLaterale">
+              <property name="text">
+               <string>Brosse latérale:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_valeurBrosselaterale">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0">
+           <widget class="QSlider" name="horizontalSlider_RoueDroite">
+            <property name="minimum">
+             <number>-255</number>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="0">
+           <widget class="QSlider" name="horizontalSlider_BrosseLaterale">
+            <property name="minimum">
+             <number>-255</number>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <widget class="QSlider" name="horizontalSlider_BrossePrincipale">
+            <property name="minimum">
+             <number>-255</number>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_textVoyants">
+              <property name="text">
+               <string>Voyants:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_Spot">
+              <property name="text">
+               <string>  Spot</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ressources.qrc">
+                <normaloff>:/icons/res/button-black.png</normaloff>
+                <normalon>:/icons/res/led-green-black.png</normalon>:/icons/res/button-black.png</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="14" column="0">
+           <widget class="QSlider" name="horizontalSlider_Aspiration">
+            <property name="maximum">
+             <number>127</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="18" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_texteIntensite">
+              <property name="text">
+               <string>Intensite:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_valeurIntensite">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="16" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_DirtDetect">
+              <property name="text">
+               <string>Dirt Detect</string>
+              </property>
+              <property name="icon">
+               <iconset resource="ressources.qrc">
+                <normaloff>:/icons/res/button-black.png</normaloff>
+                <normalon>:/icons/res/led-blue-black.png</normalon>:/icons/res/button-black.png</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="19" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QSlider" name="horizontalSlider_Intensite">
+              <property name="maximum">
+               <number>255</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="20" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_texteCouleur">
+              <property name="text">
+               <string>Couleur:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_valeurCouleur">
+              <property name="text">
+               <string>0</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="21" column="0">
+           <widget class="QSlider" name="horizontalSlider_Couleur">
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QSlider" name="horizontalSlider_RoueGauche">
+            <property name="minimum">
+             <number>-255</number>
+            </property>
+            <property name="maximum">
+             <number>255</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1157</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionConfigurer"/>
+    <addaction name="actionConnecter"/>
+    <addaction name="actionDeconnecter"/>
+    <addaction name="separator"/>
+    <addaction name="actionSelectionnerValeurs"/>
+    <addaction name="actionDemarrerAcquisition"/>
+    <addaction name="actionArreterAcquisition"/>
+    <addaction name="separator"/>
+    <addaction name="actionExporter"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <addaction name="menuMenu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionConfigurer"/>
+   <addaction name="actionConnecter"/>
+   <addaction name="actionDeconnecter"/>
+   <addaction name="actionSelectionnerValeurs"/>
+   <addaction name="actionDemarrerAcquisition"/>
+   <addaction name="actionArreterAcquisition"/>
+   <addaction name="actionExporter"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionConfigurer">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icons/res/edit-link.png</normaloff>:/icons/res/edit-link.png</iconset>
+   </property>
+   <property name="text">
+    <string>Configurer la communication</string>
+   </property>
+  </action>
+  <action name="actionConnecter">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icons/res/connect.png</normaloff>:/icons/res/connect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Connecter</string>
+   </property>
+  </action>
+  <action name="actionDeconnecter">
+   <property name="icon">
+    <iconset>
+     <normaloff>res/disconnect.png</normaloff>res/disconnect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Deconnecter</string>
+   </property>
+  </action>
+  <action name="actionSelectionnerValeurs">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icons/res/chart_curve_add.png</normaloff>:/icons/res/chart_curve_add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sélectionner les valeurs</string>
+   </property>
+  </action>
+  <action name="actionDemarrerAcquisition">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icons/res/control_record.png</normaloff>:/icons/res/control_record.png</iconset>
+   </property>
+   <property name="text">
+    <string>Démarrer l'acquisition</string>
+   </property>
+  </action>
+  <action name="actionArreterAcquisition">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icons/res/control_stop.png</normaloff>:/icons/res/control_stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Arrêter l'acquisition</string>
+   </property>
+  </action>
+  <action name="actionExporter">
+   <property name="icon">
+    <iconset resource="ressources.qrc">
+     <normaloff>:/icons/res/page_white_go.png</normaloff>:/icons/res/page_white_go.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exporter les valeurs</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ressources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>horizontalSlider_RoueDroite</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_valeurRoueDroite</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>188</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_RoueGauche</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_valeurRoueGauche</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>268</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>241</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_BrossePrincipale</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_valeurBrossePrincipale</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>321</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_BrosseLaterale</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_valeurBrosselaterale</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>374</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>347</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_Aspiration</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_valeurAspiration</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>401</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_Intensite</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_valeurIntensite</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>584</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>552</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_Couleur</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_valeurCouleur</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>110</x>
+     <y>643</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>616</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
